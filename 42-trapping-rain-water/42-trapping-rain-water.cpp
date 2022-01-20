@@ -2,9 +2,8 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n = height.size();
-         if (n <= 2) {
+         if (n <= 2) 
         return 0;
-    }
  
     int water = 0;
  
@@ -17,21 +16,6 @@ public:
     for (int i = 1; i < n - 1; i++) {
         left[i] = max(left[i-1], height[i-1]);
     }
- 
-    /*
-    int right[n];
-    right[n - 1] = INT_MIN;
-    for (int i = n - 2; i >= 0; i--) {
-        right[i] = max(right[i+1], bars[i+1]);
-    }
- 
-    for (int i = 1; i < n - 1; i++)
-    {
-        if (min(left[i], right[i]) > bars[i]) {
-            water += min(left[i], right[i]) - bars[i];
-        }
-    }
-    */
  
     // `right` stores the maximum height of a bar to the right
     // of the current bar
